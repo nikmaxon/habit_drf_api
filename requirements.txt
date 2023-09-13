@@ -1,0 +1,15 @@
+﻿django
+pillow
+psycopg2-binary
+python-dotenv
+djangorestframework
+djangorestframework-simplejwt
+drf-yasg
+django-cors-headers
+celery
+eventlet
+redis
+coverage
+telebot
+django-celery-beat
+flake8
