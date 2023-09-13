@@ -94,22 +94,22 @@ class HabitTestCase(APITestCase):
              'next': None,
              'previous': None,
              'results': [
-                 {'id': 3,
+                 {'id': self.pleasant_habit.id,
                   'place': 'TestPlace1',
                   'time': '07:00:00',
                   'action': 'Action',
                   'duration': 100,
                   'is_published': True,
                   'is_pleasant_habit': True,
-                  'user': 3},
-                 {'id': 4,
+                  'user': self.user.id},
+                 {'id': (self.pleasant_habit.id + 1),
                   'place': 'TestPlace1',
                   'time': '07:00:00',
                   'action': 'Action2',
                   'duration': 100,
                   'is_published': False,
                   'is_pleasant_habit': True,
-                  'user': 3}]})
+                  'user': self.user.id}]})
 
     def test_list_pleasant_habit_2(self):
         """
@@ -123,14 +123,14 @@ class HabitTestCase(APITestCase):
              'next': None,
              'previous': None,
              'results': [
-                 {'id': 5,
+                 {'id': self.pleasant_habit.id,
                   'place': 'TestPlace1',
                   'time': '07:00:00',
                   'action': 'Action',
                   'duration': 100,
                   'is_published': True,
                   'is_pleasant_habit': True,
-                  'user': 5}]}
+                  'user': self.user.id}]}
         )
 
     def test_retrieve_pleasant_habit(self):
@@ -221,23 +221,23 @@ class HabitTestCase(APITestCase):
              'next': None,
              'previous': None,
              'results': [
-                 {'id': 3,
+                 {'id': self.unpleasant_habit.id,
                   'place': 'TestPlace',
                   'time': '07:00:00',
                   'action': 'Action0',
                   'duration': 100,
                   'reward': 'TestReward',
-                  'user': 1,
+                  'user': self.user.id,
                   'frequency': 'EVERY DAY',
                   'is_published': True,
                   'pleasant_habit': None},
-                 {'id': 4,
+                 {'id': (self.unpleasant_habit.id + 1),
                   'place': 'TestPlace',
                   'time': '07:00:00',
                   'action': 'Action1',
                   'duration': 100,
                   'is_published': False,
-                  'user': 1,
+                  'user': self.user.id,
                   'frequency': 'EVERY DAY',
                   'pleasant_habit': None,
                   'reward': None,
@@ -255,13 +255,13 @@ class HabitTestCase(APITestCase):
              'next': None,
              'previous': None,
              'results': [
-                 {'id': 3,
+                 {'id': self.unpleasant_habit.id,
                   'place': 'TestPlace',
                   'time': '07:00:00',
                   'action': 'Action0',
                   'duration': 100,
                   'reward': 'TestReward',
-                  'user': 1,
+                  'user': self.user.id,
                   'frequency': 'EVERY DAY',
                   'is_published': True,
                   'pleasant_habit': None}
