@@ -46,18 +46,18 @@ pip install -r requirements.txt
 ```
 Для работы с переменными окружениями необходимо создать файл .env и заполнить его согласно файлу .env.sample:
 ```
-#Secret_key
+# Secret key
 SECRET_KEY=
 
-#Database
-DB_ENGINE=
-DB_NAME=
-DB_USER=
-DB_PASSWORD=
-DB_HOST=
-DB_PORT=
+# База данных
+POSTGRES_ENGINE=
+POSTGRES_NAME=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_HOST=
+POSTGRES_PORT=
 
-#Telegram bot
+# Телеграм токен
 TELEGRAM_TOKEN=
 ```
 Выполнить миграции:
@@ -101,5 +101,29 @@ _Для тестирования проекта запустить команд�
 python3 manage.py test
 ```
 
+### Запуск проекта в Docker:
+_Для работы с переменными окружениями необходимо создать файл .env и заполнить его согласно файлу .env.example:_
+```
+SECRET_KEY=
+
+# База данных
+POSTGRES_ENGINE=
+POSTGRES_NAME=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_HOST=
+POSTGRES_PORT=
+
+# Телеграм токен
+TELEGRAM_TOKEN=
+```
+_Для создания образа из Dockerfile и запуска контейнера запустить команду:_
+```
+docker-compose up --build
+```
+_или_
+```
+docker-compose up -d --build
+```
 
 Документация проекта: http://127.0.0.1:8000/swagger/
